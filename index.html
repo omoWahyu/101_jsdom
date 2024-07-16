@@ -9,22 +9,23 @@
 
 <body>
     <div id="app"></div>
-    <script type="text/javascript">
-        // select the div element with 'app' id
+    <!-- React CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Thats only run React on JS not JSX, need compiler like babel to run JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- <script type="text/javascript">
         const app = document.getElementById('app');
-
-        // Create a new H1 Element
         const header = document.createElement('h1');
-
-        // Create a new text node for the H1 element
         const text = 'Develop. Preview. Ship.';
         const headerContent = document.createTextNode(text);
-
-        // Append the text to the H1 Element
         header.appendChild(headerContent);
-
-        // Place the H1 element inside the div
         app.appendChild(header);
+      </script> -->
+    <script type="text/jsx">
+        const domNode = document.getElementById('app');
+        const root = ReactDOM.createRoot(domNode);
+        root.render(<h1>Develop. Preview. Ship.</h1>);
     </script>
 </body>
 
